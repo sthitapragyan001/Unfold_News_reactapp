@@ -6,6 +6,7 @@ import Newsicon from './Newsicon.png'
 import Header from './Header';
 
 const News=(props) =>{
+    
     const NEWS_API = props.apikey;
     const [newsarticles, setarticles] = useState([]);
     const [page, setpage] = useState(1);
@@ -19,6 +20,7 @@ const News=(props) =>{
     const [headline, setheadline] = useState(`Top ${capitalizeFirstLetter(props.category)} Headlines`);
 
     const updatenews = async () => {
+        console.log(props.country)
         setLoading(true)
         let url;
         if (props.search) {
@@ -41,7 +43,7 @@ const News=(props) =>{
     useEffect(() => {
         updatenews();
         // eslint-disable-next-line
-    },[])
+    },[props.country])
 
     const fetchMoreData = async () => {
         let url;
