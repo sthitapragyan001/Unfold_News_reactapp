@@ -9,14 +9,17 @@ function App() {
   const apiKey = process.env.REACT_APP_NEWS_API
   const [progress, setProgress] = useState(0)
   const [country, setCountry] =useState("in")
+  const [startdate,setStartdate] =useState('')
+  const [enddate,setEnddate] = useState('')
+
   const Search =()=>{
     let { query } = useParams();
-    return (<News apikey={apiKey} setProgress={setProgress} key= {query} country={country} category="general" search={query}/>)
+    return (<News apikey={apiKey} setProgress={setProgress} key= {query} country={country} category="general" search={query} startdate={startdate} enddate={enddate}/>)
   }
   return (
     <div>
       <Router>
-        <Navbar setCountry={setCountry} country={country}/>
+        <Navbar setCountry={setCountry} country={country} setEnddate={setEnddate} setStartdate={setStartdate}/>
         <LoadingBar
         height={5}
         color='red'
@@ -31,7 +34,7 @@ function App() {
           <Route exact path="/sports" element={<News apikey={apiKey} setProgress={setProgress} key="sports" country={country} category="sports" />} />
           <Route exact path="/technology" element={<News apikey={apiKey} setProgress={setProgress} key="technology" country={country} category="technology" />} />
           <Route exact path="/search/:query" element={<Search/>}/>
-          <Route exact path="/search/" element={<News apikey={apiKey} setProgress={setProgress} key="general" country={country} category="" />}/>
+          <Route exact path="/search/" element={<News apikey={apiKey} setProgress={setProgress} key="general" country={country} category=""/>}/>
         </Routes>
       </Router>
     </div>

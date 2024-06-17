@@ -24,7 +24,7 @@ const News=(props) =>{
         setLoading(true)
         let url;
         if (props.search) {
-            url=`https://newsapi.org/v2/everything?q=${props.search}&pageSize=10&apiKey=${NEWS_API}`
+            url=`https://newsapi.org/v2/everything?q=${props.search}&pageSize=10&apiKey=${NEWS_API}&from=${props.startdate}&to=${props.enddate}`
             setheadline(`Top Headlines on ${(capitalizeFirstLetter(props.search))}`)
             document.title = `Unfold | ${headline}`
         } 
@@ -48,7 +48,7 @@ const News=(props) =>{
     const fetchMoreData = async () => {
         let url;
         if (props.search) {
-            url =`https://newsapi.org/v2/everything?q=${props.search}&pageSize=10&apiKey=${NEWS_API}&page=${page+1}`    
+            url =`https://newsapi.org/v2/everything?q=${props.search}&pageSize=10&apiKey=${NEWS_API}&page=${page+1}&from=${props.startdate}&to=${props.enddate}`    
         } 
         else {
             url =`https://newsapi.org/v2/top-headlines?country=${props.country}&pageSize=10&apiKey=${NEWS_API}&category=${props.category}&page=${page+1}`
