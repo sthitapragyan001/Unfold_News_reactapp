@@ -16,7 +16,7 @@ function App() {
   return (
     <div>
       <Router>
-        <Navbar setCountry={setCountry}/>
+        <Navbar setCountry={setCountry} country={country}/>
         <LoadingBar
         height={5}
         color='red'

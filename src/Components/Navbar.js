@@ -22,8 +22,8 @@ export default function Navbar(props) {
             <li>
                 {countrylist.map((countrycode) => {
                     return (
-                        <div className='mx-2 my-1'>
-                            <button id={countrycode} onClick={(e) => country_click(e.target)} className="btn btn-outline-info btn-lg w-100" style={{ fontSize: 17 }}>{countrydict[countrycode]}</button>
+                        <div className='text-center my-1' style={{background:'white',borderRadius:20}}>
+                            <button id={countrycode} onClick={(e) => country_click(e.target)} disabled={props.country===countrycode} className="btn btn-outline-info btn-lg w-100" style={{borderRadius:20,fontSize: 17 }}>{countrydict[countrycode]}</button>
                         </div>)
                 })}
             </li>
@@ -44,21 +44,21 @@ export default function Navbar(props) {
                         <li>
                             <div className="btn-group">
                                 <button type="button" className="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" style={{ background: '#94937a', color: 'white', fontSize: 20 }}>Category</button>
-                                <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <li><Link className="dropdown-item" to="/business">Business</Link></li>
-                                    <li><Link className="dropdown-item" to="/entertainment">Entertainment</Link></li>
-                                    <li><Link className="dropdown-item" to="/health">Health</Link></li>
-                                    <li><Link className="dropdown-item" to="/science">Science</Link></li>
-                                    <li><Link className="dropdown-item" to="/sports">Sports</Link></li>
-                                    <li><Link className="dropdown-item" to="/technology">Technology</Link></li>
+                                <ul className="dropdown-menu" aria-labelledby="navbarDropdown" style={{borderRadius:20}}>
+                                    <li><Link className="dropdown-item" to="/business" style={{borderRadius:20}}>Business</Link></li>
+                                    <li><Link className="dropdown-item" to="/entertainment" style={{borderRadius:20}}>Entertainment</Link></li>
+                                    <li><Link className="dropdown-item" to="/health" style={{borderRadius:20}}>Health</Link></li>
+                                    <li><Link className="dropdown-item" to="/science" style={{borderRadius:20}}>Science</Link></li>
+                                    <li><Link className="dropdown-item" to="/sports" style={{borderRadius:20}}>Sports</Link></li>
+                                    <li><Link className="dropdown-item" to="/technology" style={{borderRadius:20}}>Technology</Link></li>
                                 </ul>
                             </div>
                         </li>
                         <li>
-                            <div className="dropdown">
+                            <div className="btn-group dropend">
                             <button type="button" className="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" style={{ background: '#94937a', color: 'white', fontSize: 20 }}>Country</button>
-                                <ul className="dropdown-menu " aria-labelledby="navbarDropdown">
-                                    <Radiobut />
+                                <ul className="dropdown-menu" aria-labelledby="navbarDropdown" style={{border:'none',backgroundColor:'transparent',height:200,overflowY:'scroll',tabIndex:'0'}}>
+                                    <Radiobut/>
                                 </ul>
                             </div>
                         </li>
