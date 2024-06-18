@@ -12,7 +12,6 @@ export default function Navbar(props) {
     const [tempstartdate, settempStartdate] = useState('')
     const [tempenddate, settempEnddate] = useState('')
     const handleclick = () => {
-        console.log('Submitted')
         setquery('')
     }
 
@@ -31,7 +30,7 @@ export default function Navbar(props) {
             <li>
                 {countrylist.map((countrycode) => {
                     return (
-                        <div className='text-center my-1' style={{ background: 'white', borderRadius: 20 }}>
+                        <div className='text-center my-1' style={{ background: 'white', borderRadius: 20 }} key={countrycode}>
                             <button id={countrycode} onClick={(e) => country_click(e.target)} disabled={props.country === countrycode} className="btn btn-outline-info btn-lg w-100" style={{ borderRadius: 20, fontSize: 17 }}>{countrydict[countrycode]}</button>
                         </div>)
                 })}
@@ -79,7 +78,7 @@ export default function Navbar(props) {
                                 <DatePicker showMonthDropdown dateFormat="dd/MM/yyyy" selected={tempstartdate} onChange={(date) => settempStartdate(date.toISOString())}/>
                                 <div className='text-center' style={{fontWeight:'bold'}}>- To -</div>
                                     <DatePicker showMonthDropdown dateFormat="dd/MM/yyyy" selected={tempenddate} onChange={(date) => settempEnddate(date.toISOString())} />
-                                    <div className='text-center'><button type="button" class="btn btn-outline-danger text-center" style={{borderRadius:20}} onClick={filterhandle}>Filter</button></div>
+                                    <div className='text-center'><button type="button" className="btn btn-outline-danger text-center" style={{borderRadius:20}} onClick={filterhandle}>Filter</button></div>
                                 </ul>
                             </div>
 

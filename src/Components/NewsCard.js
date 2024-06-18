@@ -15,7 +15,7 @@ export default function NewsCard(props) {
                 <p className="card-text">{props.desc}</p>
                 <footer className="blockquote-footer my-2">Author: {props.author} </footer>
                 <footer className="blockquote-footer my-2"><cite title="Published">{showdate} </cite></footer>
-                <a href={props.url} target='_blank' rel="noreferrer" className="btn btn-primary" style={{borderRadius:20}}>Read More...</a>
+                <a href={props.url} target='_blank' rel='noreferrer' className="btn btn-primary" style={{borderRadius:20}}>Read More...</a>
             </div>
         </div>
     )
