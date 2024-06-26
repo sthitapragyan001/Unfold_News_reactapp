@@ -13,7 +13,7 @@ export const Header = (props) => {
     });
 
     return(
-        <div className='container-fluid' style={{textAlign:'center'}}>
+        <div className='container-fluid' style={{textAlign:'center', marginTop:80}}>
             <button className="btn btn-warning" disabled={true} style={{display:'inline',float:'left',borderRadius:20}}>Date : {date.toDateString()} </button> <b style={{fontSize:40}}>-- {props.headline} --</b> <button className="btn btn-warning" disabled={true} style={{display:'inline',float:'right',borderRadius:20}}>Time : {date.toLocaleTimeString()}</button>
         </div>
     )
