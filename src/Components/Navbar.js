@@ -38,8 +38,8 @@ export default function Navbar(props) {
         )
     }
     return (
-        <nav className="navbar navbar-expand-lg navbar-light bg-light" style={{ zIndex: 1 }}>
-            <div className="container-fluid" style={{ background: '#94937a', borderRadius: 10, position: 'sticky' }}>
+        <nav className="navbar fixed-top navbar-expand-lg navbar-light bg-light" style={{ zIndex: 1 }}>
+            <div className="container-fluid" style={{ background: '#94937a', borderRadius: 10}}>
                 <Link className="navbar-brand" to="/"><img src={Newsicon} alt="" width="130" height="40" style={{ borderRadius: '13px' }} /></Link>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
